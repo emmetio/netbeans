@@ -9,5 +9,5 @@ public final class EmmetExpandAbbreviation extends EmmetAbstractAction {
 	public EmmetExpandAbbreviation(List<EditorCookie> context) {
 		super(context, "expand_abbreviation");
 	}
-	
+
 }

@@ -12,7 +12,7 @@ public class EmmetModule extends ModuleInstall {
 	public void restored() {
 		super.restored();
 		Emmet.setUserDataDelegate(new NetbeansUserData());
-		
+
 		Preferences prefs = NbPreferences.forModule(EmmetPanel.class);
 		prefs.addPreferenceChangeListener(new PreferenceChangeListener() {
 			@Override

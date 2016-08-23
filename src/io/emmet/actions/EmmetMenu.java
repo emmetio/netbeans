@@ -14,18 +14,18 @@ public class EmmetMenu extends AbstractMenuItem {
 	private String type = "menu";
 	private String name = null;
 	private ArrayList<AbstractMenuItem> items;
-	
+
 	public static EmmetMenu create() {
 		// get all actions from Emmet core
 		Emmet jse = Emmet.getSingleton();
 		Object actions = jse.execJSFunction("require('actions').getMenu");
-		
+
 		return new EmmetMenu("Emmet", itemsFromJSArray((NativeArray) actions));
 	}
-	
+
 	private static ArrayList<AbstractMenuItem> itemsFromJSArray(NativeArray ar) {
 		ArrayList<AbstractMenuItem> list = new ArrayList<AbstractMenuItem>();
-		
+
 		NativeObject menuItem;
 		for (int i = 0; i < ar.getLength(); i++) {
 			menuItem = (NativeObject) ScriptableObject.getProperty(ar, i);
@@ -35,15 +35,15 @@ public class EmmetMenu extends AbstractMenuItem {
 				list.add(new EmmetMenu(menuItem));
 			}
 		}
-		
+
 		return list;
 	}
-	
+
 	public EmmetMenu(String name, ArrayList<AbstractMenuItem> items) {
 		this.name = name;
 		this.items = items;
 	}
-	
+
 	public EmmetMenu(NativeObject item) {
 		this.name = Context.toString(ScriptableObject.getProperty(item, "name"));
 		this.items = itemsFromJSArray((NativeArray) ScriptableObject.getProperty(item, "items"));
@@ -58,7 +58,7 @@ public class EmmetMenu extends AbstractMenuItem {
 	public String getName() {
 		return name;
 	}
-	
+
 	public ArrayList<AbstractMenuItem> getItems() {
 		return items;
 	}

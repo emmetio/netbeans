@@ -9,5 +9,5 @@ public final class EmmetRemoveTag extends EmmetAbstractAction {
 	public EmmetRemoveTag(List<EditorCookie> context) {
 		super(context, "remove_tag");
 	}
-	
+
 }

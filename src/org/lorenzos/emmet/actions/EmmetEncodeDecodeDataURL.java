@@ -9,5 +9,5 @@ public final class EmmetEncodeDecodeDataURL extends EmmetAbstractAction {
 	public EmmetEncodeDecodeDataURL(List<EditorCookie> context) {
 		super(context, "encode_decode_data_url");
 	}
-	
+
 }

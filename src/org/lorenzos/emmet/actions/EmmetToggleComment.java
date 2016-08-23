@@ -9,5 +9,5 @@ public final class EmmetToggleComment extends EmmetAbstractAction {
 	public EmmetToggleComment(List<EditorCookie> context) {
 		super(context, "toggle_comment");
 	}
-	
+
 }

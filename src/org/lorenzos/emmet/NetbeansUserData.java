@@ -24,13 +24,13 @@ public class NetbeansUserData implements IUserData {
 			if (extDir.exists() && extDir.isDirectory()) {
 				File[] files = extDir.listFiles();
 				ArrayList<String> extFiles = new ArrayList<String>();
-				
+
 				try {
 					for (File f : files) {
 						extFiles.add(f.getCanonicalPath());
 					}
 				} catch (Exception e) {}
-				
+
 				Gson gson = new Gson();
 				ctx.execJSFunction("javaLoadExtensions", gson.toJson(extFiles));
 			}

@@ -9,5 +9,5 @@ public final class EmmetSplitJoinTag extends EmmetAbstractAction {
 	public EmmetSplitJoinTag(List<EditorCookie> context) {
 		super(context, "split_join_tag");
 	}
-	
+
 }
