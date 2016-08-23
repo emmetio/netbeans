@@ -2,9 +2,9 @@
 <!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
 <filesystem>
     <folder name="Actions">
-		<folder name="Emmet Basic">
-			
-			<file name="org-lorenzos-emmet-actions-ActionsFactory.instance_hidden"/>
+        <folder name="Emmet Basic">
+
+            <file name="org-lorenzos-emmet-actions-ActionsFactory.instance_hidden"/>
             <file name="org-lorenzos-emmet-actions-EmmetExpandAbbreviation.instance">
                 <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
                 <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetExpandAbbreviation"/>
@@ -14,8 +14,8 @@
                 <attr name="selectionType" stringvalue="ANY"/>
                 <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
             </file>
-			
-			<file name="org-lorenzos-emmet-actions-EmmetWrapWithAbbreviation.instance">
+
+            <file name="org-lorenzos-emmet-actions-EmmetWrapWithAbbreviation.instance">
                 <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
                 <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetWrapWithAbbreviation"/>
                 <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetWrapWithAbbreviation"/>
@@ -24,59 +24,59 @@
                 <attr name="selectionType" stringvalue="ANY"/>
                 <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
             </file>
-			
-			<file name="org-lorenzos-emmet-actions-EmmetToggleComment.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetToggleComment"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetToggleComment"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
-			
-			<!-- Go to point -->
-			<file name="org-lorenzos-emmet-actions-EmmetGoToNextEditPoint.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetGoToNextEditPoint"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetGoToNextEditPoint"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
-			<file name="org-lorenzos-emmet-actions-EmmetGoToPreviousEditPoint.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetGoToPreviousEditPoint"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetGoToPreviousEditPoint"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
-			
-			
-			<!-- Select item -->
-			<file name="org-lorenzos-emmet-actions-EmmetSelectNextItem.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetSelectNextItem"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetSelectNextItem"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
-			<file name="org-lorenzos-emmet-actions-EmmetSelectPreviousItem.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetSelectPreviousItem"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetSelectPreviousItem"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
-			
-			<file name="org-lorenzos-emmet-actions-EmmetMergeLines.instance">
+
+            <file name="org-lorenzos-emmet-actions-EmmetToggleComment.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetToggleComment"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetToggleComment"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
+
+            <!-- Go to point -->
+            <file name="org-lorenzos-emmet-actions-EmmetGoToNextEditPoint.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetGoToNextEditPoint"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetGoToNextEditPoint"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
+            <file name="org-lorenzos-emmet-actions-EmmetGoToPreviousEditPoint.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetGoToPreviousEditPoint"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetGoToPreviousEditPoint"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
+
+
+            <!-- Select item -->
+            <file name="org-lorenzos-emmet-actions-EmmetSelectNextItem.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetSelectNextItem"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetSelectNextItem"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
+            <file name="org-lorenzos-emmet-actions-EmmetSelectPreviousItem.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetSelectPreviousItem"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetSelectPreviousItem"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
+
+            <file name="org-lorenzos-emmet-actions-EmmetMergeLines.instance">
                 <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
                 <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetMergeLines"/>
                 <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetMergeLines"/>
@@ -85,27 +85,27 @@
                 <attr name="selectionType" stringvalue="ANY"/>
                 <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
             </file>
-			
-			<file name="org-lorenzos-emmet-actions-EmmetEncodeDecodeDataURL.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetEncodeDecodeDataURL"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetEncodeDecodeDataURL"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
-			
-			<file name="org-lorenzos-emmet-actions-EmmetUpdateImageSize.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetUpdateImageSize"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetUpdateImageSize"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
-		</folder>
+
+            <file name="org-lorenzos-emmet-actions-EmmetEncodeDecodeDataURL.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetEncodeDecodeDataURL"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetEncodeDecodeDataURL"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
+
+            <file name="org-lorenzos-emmet-actions-EmmetUpdateImageSize.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetUpdateImageSize"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetUpdateImageSize"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
+        </folder>
         <folder name="Emmet HTML">
             <file name="org-lorenzos-emmet-actions-EmmetMatchPair.instance">
                 <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
@@ -116,8 +116,8 @@
                 <attr name="selectionType" stringvalue="ANY"/>
                 <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
             </file>
-			
-			<file name="org-lorenzos-emmet-actions-EmmetMatchPairInward.instance">
+
+            <file name="org-lorenzos-emmet-actions-EmmetMatchPairInward.instance">
                 <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
                 <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetMatchPairInward"/>
                 <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetMatchPairInward"/>
@@ -126,8 +126,8 @@
                 <attr name="selectionType" stringvalue="ANY"/>
                 <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
             </file>
-			
-			<file name="org-lorenzos-emmet-actions-EmmetGoToMatchingPair.instance">
+
+            <file name="org-lorenzos-emmet-actions-EmmetGoToMatchingPair.instance">
                 <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
                 <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetGoToMatchingPair"/>
                 <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetGoToMatchingPair"/>
@@ -136,102 +136,102 @@
                 <attr name="selectionType" stringvalue="ANY"/>
                 <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
             </file>
-            
-			<file name="org-lorenzos-emmet-actions-EmmetRemoveTag.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetRemoveTag"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetRemoveTag"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
-			<file name="org-lorenzos-emmet-actions-EmmetSplitJoinTag.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetSplitJoinTag"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetSplitJoinTag"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
+
+            <file name="org-lorenzos-emmet-actions-EmmetRemoveTag.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetRemoveTag"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetRemoveTag"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
+            <file name="org-lorenzos-emmet-actions-EmmetSplitJoinTag.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetSplitJoinTag"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetSplitJoinTag"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
         </folder>
-		<folder name="Emmet Numbers">
-			<file name="org-lorenzos-emmet-actions-EmmetEvaluateMathExpression.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetEvaluateMathExpression"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetEvaluateMathExpression"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
-			<file name="org-lorenzos-emmet-actions-EmmetIncrementBy1.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetIncrementBy1"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetIncrementBy1"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
-			<file name="org-lorenzos-emmet-actions-EmmetDecrementBy1.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetDecrementBy1"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetDecrementBy1"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
-			<file name="org-lorenzos-emmet-actions-EmmetIncrementBy10.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetIncrementBy10"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetIncrementBy10"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
-			<file name="org-lorenzos-emmet-actions-EmmetDecrementBy10.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetDecrementBy10"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetDecrementBy10"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
-			<file name="org-lorenzos-emmet-actions-EmmetIncrementBy01.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetIncrementBy01"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetIncrementBy01"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
-			<file name="org-lorenzos-emmet-actions-EmmetDecrementBy01.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetDecrementBy01"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetDecrementBy01"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
-		</folder>
-		<folder name="Emmet CSS">
-			<file name="org-lorenzos-emmet-actions-EmmetReflectValue.instance">
-				<attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
-				<attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetReflectValue"/>
-				<attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetReflectValue"/>
-				<attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
-				<attr name="noIconInMenu" boolvalue="false"/>
-				<attr name="selectionType" stringvalue="ANY"/>
-				<attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
-			</file>
-		</folder>
+        <folder name="Emmet Numbers">
+            <file name="org-lorenzos-emmet-actions-EmmetEvaluateMathExpression.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetEvaluateMathExpression"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetEvaluateMathExpression"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
+            <file name="org-lorenzos-emmet-actions-EmmetIncrementBy1.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetIncrementBy1"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetIncrementBy1"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
+            <file name="org-lorenzos-emmet-actions-EmmetDecrementBy1.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetDecrementBy1"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetDecrementBy1"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
+            <file name="org-lorenzos-emmet-actions-EmmetIncrementBy10.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetIncrementBy10"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetIncrementBy10"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
+            <file name="org-lorenzos-emmet-actions-EmmetDecrementBy10.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetDecrementBy10"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetDecrementBy10"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
+            <file name="org-lorenzos-emmet-actions-EmmetIncrementBy01.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetIncrementBy01"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetIncrementBy01"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
+            <file name="org-lorenzos-emmet-actions-EmmetDecrementBy01.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetDecrementBy01"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetDecrementBy01"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
+        </folder>
+        <folder name="Emmet CSS">
+            <file name="org-lorenzos-emmet-actions-EmmetReflectValue.instance">
+                <attr name="delegate" methodvalue="org.openide.awt.Actions.inject"/>
+                <attr name="displayName" bundlevalue="org.lorenzos.emmet.actions.Bundle#CTL_EmmetReflectValue"/>
+                <attr name="injectable" stringvalue="org.lorenzos.emmet.actions.EmmetReflectValue"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.context"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="type" stringvalue="org.openide.cookies.EditorCookie"/>
+            </file>
+        </folder>
     </folder>
     <folder name="Editors">
         <folder name="text">
@@ -244,124 +244,124 @@
     </folder>
     <folder name="Menu">
         <folder name="Edit">
-			<folder name="Emmet">
-				<attr name="position" intvalue="2375"/>
-				
-				<folder name="HTML">
-					<file name="org-lorenzos-emmet-actions-EmmetMatchPair.shadow">
-						<attr name="originalFile" stringvalue="Actions/Emmet HTML/org-lorenzos-emmet-actions-EmmetMatchPair.instance"/>
-						<attr name="position" intvalue="1"/>
-					</file>
-					<file name="org-lorenzos-emmet-actions-EmmetMatchPairInward.shadow">
-						<attr name="originalFile" stringvalue="Actions/Emmet HTML/org-lorenzos-emmet-actions-EmmetMatchPairInward.instance"/>
-						<attr name="position" intvalue="2"/>
-					</file>
-					<file name="org-lorenzos-emmet-actions-EmmetGoToMatchingPair.shadow">
-						<attr name="originalFile" stringvalue="Actions/Emmet HTML/org-lorenzos-emmet-actions-EmmetGoToMatchingPair.instance"/>
-						<attr name="position" intvalue="3"/>
-					</file>
-					<file name="org-lorenzos-emmet-actions-EmmetRemoveTag.shadow">
-						<attr name="originalFile" stringvalue="Actions/Emmet HTML/org-lorenzos-emmet-actions-EmmetRemoveTag.instance"/>
-						<attr name="position" intvalue="4"/>
-					</file>
-					<file name="org-lorenzos-emmet-actions-EmmetSplitJoinTag.shadow">
-						<attr name="originalFile" stringvalue="Actions/Emmet HTML/org-lorenzos-emmet-actions-EmmetSplitJoinTag.instance"/>
-						<attr name="position" intvalue="5"/>
-					</file>
-				</folder>
-				<folder name="CSS">
-					<file name="org-lorenzos-emmet-actions-EmmetReflectValue.shadow">
-						<attr name="originalFile" stringvalue="Actions/Emmet CSS/org-lorenzos-emmet-actions-EmmetReflectValue.instance"/>
-						<attr name="position" intvalue="1"/>
-					</file>
-				</folder>
-				<folder name="Numbers">
-					<file name="org-lorenzos-emmet-actions-EmmetEvaluateMathExpression.shadow">
-						<attr name="originalFile" stringvalue="Actions/Emmet Numbers/org-lorenzos-emmet-actions-EmmetEvaluateMathExpression.instance"/>
-						<attr name="position" intvalue="1"/>
-					</file>
-					<file name="org-lorenzos-emmet-actions-EmmetIncrementBy1.shadow">
-						<attr name="originalFile" stringvalue="Actions/Emmet Numbers/org-lorenzos-emmet-actions-EmmetIncrementBy1.instance"/>
-						<attr name="position" intvalue="2"/>
-					</file>
-					<file name="org-lorenzos-emmet-actions-EmmetDecrementBy1.shadow">
-						<attr name="originalFile" stringvalue="Actions/Emmet Numbers/org-lorenzos-emmet-actions-EmmetDecrementBy1.instance"/>
-						<attr name="position" intvalue="3"/>
-					</file>
-					<file name="org-lorenzos-emmet-actions-EmmetIncrementBy10.shadow">
-						<attr name="originalFile" stringvalue="Actions/Emmet Numbers/org-lorenzos-emmet-actions-EmmetIncrementBy10.instance"/>
-						<attr name="position" intvalue="4"/>
-					</file>
-					<file name="org-lorenzos-emmet-actions-EmmetDecrementBy10.shadow">
-						<attr name="originalFile" stringvalue="Actions/Emmet Numbers/org-lorenzos-emmet-actions-EmmetDecrementBy10.instance"/>
-						<attr name="position" intvalue="5"/>
-					</file>
-					<file name="org-lorenzos-emmet-actions-EmmetIncrementBy01.shadow">
-						<attr name="originalFile" stringvalue="Actions/Emmet Numbers/org-lorenzos-emmet-actions-EmmetIncrementBy01.instance"/>
-						<attr name="position" intvalue="6"/>
-					</file>
-					<file name="org-lorenzos-emmet-actions-EmmetDecrementBy01.shadow">
-						<attr name="originalFile" stringvalue="Actions/Emmet Numbers/org-lorenzos-emmet-actions-EmmetDecrementBy01.instance"/>
-						<attr name="position" intvalue="7"/>
-					</file>
-				</folder>
-				
-				
-				<file name="org-lorenzos-emmet-actions-EmmetExpandAbbreviation.shadow">
-					<attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetExpandAbbreviation.instance"/>
-					<attr name="position" intvalue="4"/>
-				</file>
-				
-				<file name="org-lorenzos-emmet-actions-EmmetWrapWithAbbreviation.shadow">
-					<attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetWrapWithAbbreviation.instance"/>
-					<attr name="position" intvalue="5"/>
-				</file>
-				
-				<file name="org-lorenzos-emmet-actions-EmmetToggleComment.shadow">
-					<attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetToggleComment.instance"/>
-					<attr name="position" intvalue="6"/>
-				</file>
-				
-				<file name="org-lorenzos-emmet-actions-EmmetGoToNextEditPoint.shadow">
-					<attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetGoToNextEditPoint.instance"/>
-					<attr name="position" intvalue="7"/>
-				</file>
-				<file name="org-lorenzos-emmet-actions-EmmetGoToPreviousEditPoint.shadow">
-					<attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetGoToPreviousEditPoint.instance"/>
-					<attr name="position" intvalue="8"/>
-				</file>
-				
-				<file name="org-lorenzos-emmet-actions-EmmetSelectNextItem.shadow">
-					<attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetSelectNextItem.instance"/>
-					<attr name="position" intvalue="9"/>
-				</file>
-				<file name="org-lorenzos-emmet-actions-EmmetSelectPreviousItem.shadow">
-					<attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetSelectPreviousItem.instance"/>
-					<attr name="position" intvalue="10"/>
-				</file>
-				
-				<file name="org-lorenzos-emmet-actions-EmmetMergeLines.shadow">
-					<attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetMergeLines.instance"/>
-					<attr name="position" intvalue="11"/>
-				</file>
-				
-				<file name="org-lorenzos-emmet-actions-EmmetEncodeDecodeDataURL.shadow">
-					<attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetEncodeDecodeDataURL.instance"/>
-					<attr name="position" intvalue="12"/>
-				</file>
-				
-				<file name="org-lorenzos-emmet-actions-EmmetUpdateImageSize.shadow">
-					<attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetUpdateImageSize.instance"/>
-					<attr name="position" intvalue="13"/>
-				</file>
-			</folder>
-			<file name="org-lorenzos-emmet-actions-EmmetExpandAbbreviation-separatorAfter.instance">
-				<attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
-				<attr name="position" intvalue="2375"/>
-			</file>
+            <folder name="Emmet">
+                <attr name="position" intvalue="2375"/>
+
+                <folder name="HTML">
+                    <file name="org-lorenzos-emmet-actions-EmmetMatchPair.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Emmet HTML/org-lorenzos-emmet-actions-EmmetMatchPair.instance"/>
+                        <attr name="position" intvalue="1"/>
+                    </file>
+                    <file name="org-lorenzos-emmet-actions-EmmetMatchPairInward.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Emmet HTML/org-lorenzos-emmet-actions-EmmetMatchPairInward.instance"/>
+                        <attr name="position" intvalue="2"/>
+                    </file>
+                    <file name="org-lorenzos-emmet-actions-EmmetGoToMatchingPair.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Emmet HTML/org-lorenzos-emmet-actions-EmmetGoToMatchingPair.instance"/>
+                        <attr name="position" intvalue="3"/>
+                    </file>
+                    <file name="org-lorenzos-emmet-actions-EmmetRemoveTag.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Emmet HTML/org-lorenzos-emmet-actions-EmmetRemoveTag.instance"/>
+                        <attr name="position" intvalue="4"/>
+                    </file>
+                    <file name="org-lorenzos-emmet-actions-EmmetSplitJoinTag.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Emmet HTML/org-lorenzos-emmet-actions-EmmetSplitJoinTag.instance"/>
+                        <attr name="position" intvalue="5"/>
+                    </file>
+                </folder>
+                <folder name="CSS">
+                    <file name="org-lorenzos-emmet-actions-EmmetReflectValue.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Emmet CSS/org-lorenzos-emmet-actions-EmmetReflectValue.instance"/>
+                        <attr name="position" intvalue="1"/>
+                    </file>
+                </folder>
+                <folder name="Numbers">
+                    <file name="org-lorenzos-emmet-actions-EmmetEvaluateMathExpression.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Emmet Numbers/org-lorenzos-emmet-actions-EmmetEvaluateMathExpression.instance"/>
+                        <attr name="position" intvalue="1"/>
+                    </file>
+                    <file name="org-lorenzos-emmet-actions-EmmetIncrementBy1.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Emmet Numbers/org-lorenzos-emmet-actions-EmmetIncrementBy1.instance"/>
+                        <attr name="position" intvalue="2"/>
+                    </file>
+                    <file name="org-lorenzos-emmet-actions-EmmetDecrementBy1.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Emmet Numbers/org-lorenzos-emmet-actions-EmmetDecrementBy1.instance"/>
+                        <attr name="position" intvalue="3"/>
+                    </file>
+                    <file name="org-lorenzos-emmet-actions-EmmetIncrementBy10.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Emmet Numbers/org-lorenzos-emmet-actions-EmmetIncrementBy10.instance"/>
+                        <attr name="position" intvalue="4"/>
+                    </file>
+                    <file name="org-lorenzos-emmet-actions-EmmetDecrementBy10.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Emmet Numbers/org-lorenzos-emmet-actions-EmmetDecrementBy10.instance"/>
+                        <attr name="position" intvalue="5"/>
+                    </file>
+                    <file name="org-lorenzos-emmet-actions-EmmetIncrementBy01.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Emmet Numbers/org-lorenzos-emmet-actions-EmmetIncrementBy01.instance"/>
+                        <attr name="position" intvalue="6"/>
+                    </file>
+                    <file name="org-lorenzos-emmet-actions-EmmetDecrementBy01.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Emmet Numbers/org-lorenzos-emmet-actions-EmmetDecrementBy01.instance"/>
+                        <attr name="position" intvalue="7"/>
+                    </file>
+                </folder>
+
+
+                <file name="org-lorenzos-emmet-actions-EmmetExpandAbbreviation.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetExpandAbbreviation.instance"/>
+                    <attr name="position" intvalue="4"/>
+                </file>
+
+                <file name="org-lorenzos-emmet-actions-EmmetWrapWithAbbreviation.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetWrapWithAbbreviation.instance"/>
+                    <attr name="position" intvalue="5"/>
+                </file>
+
+                <file name="org-lorenzos-emmet-actions-EmmetToggleComment.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetToggleComment.instance"/>
+                    <attr name="position" intvalue="6"/>
+                </file>
+
+                <file name="org-lorenzos-emmet-actions-EmmetGoToNextEditPoint.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetGoToNextEditPoint.instance"/>
+                    <attr name="position" intvalue="7"/>
+                </file>
+                <file name="org-lorenzos-emmet-actions-EmmetGoToPreviousEditPoint.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetGoToPreviousEditPoint.instance"/>
+                    <attr name="position" intvalue="8"/>
+                </file>
+
+                <file name="org-lorenzos-emmet-actions-EmmetSelectNextItem.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetSelectNextItem.instance"/>
+                    <attr name="position" intvalue="9"/>
+                </file>
+                <file name="org-lorenzos-emmet-actions-EmmetSelectPreviousItem.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetSelectPreviousItem.instance"/>
+                    <attr name="position" intvalue="10"/>
+                </file>
+
+                <file name="org-lorenzos-emmet-actions-EmmetMergeLines.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetMergeLines.instance"/>
+                    <attr name="position" intvalue="11"/>
+                </file>
+
+                <file name="org-lorenzos-emmet-actions-EmmetEncodeDecodeDataURL.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetEncodeDecodeDataURL.instance"/>
+                    <attr name="position" intvalue="12"/>
+                </file>
+
+                <file name="org-lorenzos-emmet-actions-EmmetUpdateImageSize.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetUpdateImageSize.instance"/>
+                    <attr name="position" intvalue="13"/>
+                </file>
+            </folder>
+            <file name="org-lorenzos-emmet-actions-EmmetExpandAbbreviation-separatorAfter.instance">
+                <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                <attr name="position" intvalue="2375"/>
+            </file>
         </folder>
     </folder>
-	<folder name="Shortcuts">
+    <folder name="Shortcuts">
         <file name="D-O-N.shadow">
             <attr name="originalFile" stringvalue="Actions/Emmet Basic/org-lorenzos-emmet-actions-EmmetExpandAbbreviation.instance"/>
         </file>
