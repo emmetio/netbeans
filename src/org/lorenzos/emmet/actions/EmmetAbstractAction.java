@@ -9,7 +9,6 @@ import java.util.List;
 import org.lorenzos.utils.OutputUtils;
 import org.lorenzos.emmet.editor.EmmetEditor;
 import org.openide.cookies.EditorCookie;
-import org.openide.text.NbDocument;
 
 public abstract class EmmetAbstractAction implements ActionListener {
 
