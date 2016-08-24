@@ -23,7 +23,7 @@ public class NetbeansUserData implements IUserData {
 			File extDir = new File(extPath);
 			if (extDir.exists() && extDir.isDirectory()) {
 				File[] files = extDir.listFiles();
-				ArrayList<String> extFiles = new ArrayList<String>();
+				ArrayList<String> extFiles = new ArrayList<>();
 
 				try {
 					for (File f : files) {

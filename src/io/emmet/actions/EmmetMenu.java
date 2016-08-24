@@ -24,7 +24,7 @@ public class EmmetMenu extends AbstractMenuItem {
 	}
 
 	private static ArrayList<AbstractMenuItem> itemsFromJSArray(NativeArray ar) {
-		ArrayList<AbstractMenuItem> list = new ArrayList<AbstractMenuItem>();
+		ArrayList<AbstractMenuItem> list = new ArrayList<>();
 
 		NativeObject menuItem;
 		for (int i = 0; i < ar.getLength(); i++) {

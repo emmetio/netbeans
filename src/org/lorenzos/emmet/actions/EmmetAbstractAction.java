@@ -24,7 +24,7 @@ public abstract class EmmetAbstractAction implements ActionListener {
 	public void actionPerformed(ActionEvent ev) {
 
 		// For each EditorCookie
-		ArrayList<Integer> editorCookieDone = new ArrayList<Integer>();
+		ArrayList<Integer> editorCookieDone = new ArrayList<>();
 		for (EditorCookie editorCookie : this.context) {
 			if (editorCookieDone.contains(editorCookie.hashCode())) continue;
 			editorCookieDone.add(editorCookie.hashCode()); // Store

@@ -46,7 +46,7 @@ public class TabStopStructure {
 	}
 
 	private void createGroups() {
-		groups = new HashMap<String, TabStopGroup>();
+		groups = new HashMap<>();
 	}
 
 	public void setText(String text) {

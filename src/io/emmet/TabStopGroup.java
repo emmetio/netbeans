@@ -7,7 +7,7 @@ public class TabStopGroup {
 	private ArrayList<TabStop> list;
 
 	public TabStopGroup() {
-		 list = new ArrayList<TabStop>();
+		 list = new ArrayList<>();
 	}
 
 	public void addTabStop(int start, int end) {
