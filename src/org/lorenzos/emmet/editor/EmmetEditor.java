@@ -129,7 +129,7 @@ public class EmmetEditor implements IEmmetEditor {
 	public void replaceContent(String value, int start, int end) {
 		this.replaceContent(value, start, end, false);
 	}
-	
+
 	@Override
 	public void replaceContent(String value, final int start, final int end, boolean no_indent) {
 			// Indent string
@@ -175,7 +175,7 @@ public class EmmetEditor implements IEmmetEditor {
 			return "";
 		}
 	}
-	
+
 	private boolean matchesSyntax(Object... vargs) {
 		String ct = this.getContentType();
 		for (int i = 0; i < vargs.length; i++) {
@@ -183,7 +183,7 @@ public class EmmetEditor implements IEmmetEditor {
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
 
@@ -210,7 +210,7 @@ public class EmmetEditor implements IEmmetEditor {
 				}
 			}
 		}
-		
+
 		Emmet emmet = Emmet.getSingleton();
 		return Context.toString(emmet.execJSFunction("javaDetectSyntax", this, syntax));
 	}
@@ -249,7 +249,7 @@ public class EmmetEditor implements IEmmetEditor {
 	private void setup() throws EmmetEditorException {
 
 		try {
-			
+
 			// Init
 			this.doc = this.textComp.getDocument();
 			this.caretPosition = this.textComp.getCaretPosition();

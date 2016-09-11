@@ -14,16 +14,19 @@ public class Emmet {
 	private static Scriptable scope;
 	private static String snippetsJSON = "snippets.json";
 	private static IUserData userDataDelegate = null;
-	
-	
+
+
 	private static String[] coreFiles = {
 		"emmet-app.js",
 //		"json2.js",
 		"file-interface.js",
 		"java-wrapper.js"
-	}; 
-	
+	};
+
 	private Emmet() {
+	}
+
+	private void initialize(){
 		cx = Context.enter();
 		scope = cx.initStandardObjects();
 		try {
@@ -31,10 +34,10 @@ public class Emmet {
 			for (int i = 0; i < coreFiles.length; i++) {
 				cx.evaluateReader(scope, getReaderForLocalFile(coreFiles[i]), coreFiles[i], 1, null);
 			}
-			
+
 			// load default snippets
 			execJSFunction("javaLoadSystemSnippets", readLocalFile(snippetsJSON));
-			
+
 			if (userDataDelegate != null) {
 				userDataDelegate.load(this);
 				userDataDelegate.loadExtensions(this);
@@ -49,31 +52,32 @@ public class Emmet {
 			synchronized (Emmet.class) {
 				if (singleton == null) {
 					singleton = new Emmet();
+					singleton.initialize();
 				}
 			}
 		}
 		return singleton;
 	}
-	
+
 	public static void setUserDataDelegate(IUserData delegate) {
 		userDataDelegate = delegate;
 	}
-	
+
 	public static void reset() {
 		if (singleton == null)
 			return;
-		
+
 		Context.exit();
-		cx = null; 
+		cx = null;
 		scope = null;
 		singleton = null;
 	}
-	
+
 	private InputStreamReader getReaderForLocalFile(String fileName) throws UnsupportedEncodingException {
 		InputStream is = this.getClass().getResourceAsStream(fileName);
 		return new InputStreamReader(is, "UTF-8");
 	}
-	
+
 	private String readLocalFile(String fileName) {
 		// using Scanner trick:
 		// http://stackoverflow.com/a/5445161/1312205
@@ -84,11 +88,11 @@ public class Emmet {
 	        return "";
 	    }
 	}
-	
+
 	/**
 	 * Executes arbitrary JS function with passed arguments. Each argument is
 	 * automatically converted to JS type
-	 * @param name JS function name. May have namespaces 
+	 * @param name JS function name. May have namespaces
 	 * (e.g. <code>emmet.require('actions').get</code>)
 	 * @param vargs
 	 * @return
@@ -105,18 +109,18 @@ public class Emmet {
 			}
 			jsArgs.append("__javaParam" + i);
 		}
-		
+
 		// evaluate code
 		Object result = cx.evaluateString(scope, name + "(" + jsArgs.toString() + ");", "<eval>", 1, null);
-		
+
 		// remove temp variables
 		for (int i = 0; i < vargs.length; i++) {
 			ScriptableObject.deleteProperty(scope, "__javaParam" + i);
 		}
-		
+
 		return result;
 	}
-	
+
 	/**
 	 * Runs Emmet script on passed editor object (should be the first argument)
 	 * @return 'True' if action was successfully executed
@@ -124,7 +128,7 @@ public class Emmet {
 	public boolean runAction(Object... args) {
 		return Context.toBoolean(execJSFunction("runEmmetAction", args));
 	}
-	
+
 	/**
 	 * Returns preview for "Wrap with Abbreviation" action
 	 */

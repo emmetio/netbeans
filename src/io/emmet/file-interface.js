@@ -1,5 +1,5 @@
 /**
- * Emmet file I/O interface implementation using Java classes 
+ * Emmet file I/O interface implementation using Java classes
  * (for Mozilla Rhino)
  *
  * @author Sergey Chikuyonok (serge.che@gmail.com)
@@ -28,7 +28,7 @@ emmet.define('file', function(require, _) {
 
 			return params;
 		},
-		
+
 		_read: function(params, isText) {
 			var stream = null, content, c;
 			if (isURL(params.path)) {
@@ -42,7 +42,7 @@ emmet.define('file', function(require, _) {
 			}
 
 			if (stream) {
-				
+
 				if (isText) {
 					stream = new java.io.BufferedReader(new java.io.InputStreamReader(stream));
 					content = '';
@@ -60,10 +60,10 @@ emmet.define('file', function(require, _) {
 				stream.close();
 				return content;
 			}
-			
+
 			return null;
 		},
-		
+
 		/**
 		 * Read binary file content and return it
 		 * @param {String} path File's relative or absolute path
@@ -73,14 +73,14 @@ emmet.define('file', function(require, _) {
 		read: function(path, size, callback) {
 			var params = this._parseParams(arguments);
 			var content = this._read(params);
-			
+
 			if (content) {
 				return params.callback(0, content);
 			}
-			
+
 			params.callback('Unable to read file');
 		},
-		
+
 		/**
 		 * Read file content and return it
 		 * @param {String} path File's relative or absolute path
@@ -90,11 +90,11 @@ emmet.define('file', function(require, _) {
 		readText: function(path, size, callback) {
 			var params = this._parseParams(arguments);
 			var content = this._read(params, true);
-			
+
 			if (content) {
 				return params.callback(0, content);
 			}
-			
+
 			params.callback('Unable to read file');
 		},
 
@@ -131,7 +131,7 @@ emmet.define('file', function(require, _) {
 			var f = new File(editor_file),
 				result = '',
 				tmp;
-				
+
 			// traverse upwards to find image uri
 			while (f.getParent()) {
 				tmp = new File(this.createPath(f.getParent(), file_name));
@@ -139,10 +139,10 @@ emmet.define('file', function(require, _) {
 					result = tmp.getCanonicalPath();
 					break;
 				}
-				
+
 				f = new File(f.getParent());
 			}
-			
+
 			return result;
 		},
 
@@ -157,20 +157,20 @@ emmet.define('file', function(require, _) {
 			var File = Packages.java.io.File,
 				f = new File(parent),
 				result = '';
-				
+
 			if (f.exists()) {
 				if (f.isFile()) {
 					parent = f.getParent();
 				}
-				
+
 				var req_file = new File(parent, file_name);
 				result = req_file.getCanonicalPath();
 			}
-			
+
 			if (callback) {
 				callback(result);
 			}
-			
+
 			return result;
 		},
 
@@ -182,20 +182,20 @@ emmet.define('file', function(require, _) {
 		save: function(file, content) {
 			content = content || '';
 			file = String(file);
-			
+
 			var File = Packages.java.io.File,
 				f = new File(file);
-				
+
 			if (file.indexOf('/') != -1) {
 				var f_parent = new File(f.getParent());
 				f_parent.mkdirs();
 			}
-			
+
 			var stream = new Packages.java.io.FileOutputStream(file);
 			for (var i = 0, il = content.length; i < il; i++) {
 				stream.write(content.charCodeAt(i));
 			}
-				
+
 			stream.close();
 		},
 

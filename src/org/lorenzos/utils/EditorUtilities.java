@@ -8,10 +8,10 @@ import javax.swing.text.JTextComponent;
 import org.openide.cookies.EditorCookie;
 
 public class EditorUtilities {
-	
+
 	private JTextComponent textComp;
 	private Document doc;
-	
+
 	private int caretPosition;
 	private int lineStart;
 	private int lineEnd;
@@ -61,7 +61,7 @@ public class EditorUtilities {
 		} catch (BadLocationException ex) {
 			throw new EditorUtilitiesException();
 		}
-		
+
 	}
 
 	public String getLine() {

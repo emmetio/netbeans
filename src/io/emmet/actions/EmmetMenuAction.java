@@ -8,7 +8,7 @@ public class EmmetMenuAction extends AbstractMenuItem {
 	private String type = "action";
 	private String name = null;
 	private String id = null;
-	
+
 	public EmmetMenuAction(NativeObject item) {
 		this.name = Context.toString(ScriptableObject.getProperty(item, "label"));
 		this.id = Context.toString(ScriptableObject.getProperty(item, "name"));
@@ -23,7 +23,7 @@ public class EmmetMenuAction extends AbstractMenuItem {
 	public String getName() {
 		return name;
 	}
-	
+
 	public String getId() {
 		return id;
 	}

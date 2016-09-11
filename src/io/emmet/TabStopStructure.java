@@ -24,10 +24,10 @@ public class TabStopStructure {
 	 */
 	private String text = "";
 	private HashMap<String, TabStopGroup> groups;
-	
+
 	public TabStopStructure(String text) {
 		createGroups();
-		
+
 		Emmet jse = Emmet.getSingleton();
 		Scriptable tabstopData = (Scriptable) jse.execJSFunction("javaExtractTabstops", text);
 		if (tabstopData != null) {
@@ -37,16 +37,16 @@ public class TabStopStructure {
 			for (int i = 0; i < tabstops.getLength(); i++) {
 				tabstopItem = (NativeObject) ScriptableObject.getProperty(tabstops, i);
 				addTabStopToGroup(
-						Context.toString(ScriptableObject.getProperty(tabstopItem, "group")), 
-						(int) Context.toNumber(ScriptableObject.getProperty(tabstopItem, "start")), 
+						Context.toString(ScriptableObject.getProperty(tabstopItem, "group")),
+						(int) Context.toNumber(ScriptableObject.getProperty(tabstopItem, "start")),
 						(int) Context.toNumber(ScriptableObject.getProperty(tabstopItem, "end")));
 			}
 		}
 		setText(text);
 	}
-	
+
 	private void createGroups() {
-		groups = new HashMap<String, TabStopGroup>();
+		groups = new HashMap<>();
 	}
 
 	public void setText(String text) {
@@ -56,19 +56,19 @@ public class TabStopStructure {
 	public String getText() {
 		return text;
 	}
-	
+
 	public void addTabStopToGroup(String groupName, int start, int end) {
 		if (!groups.containsKey(groupName)) {
 			groups.put(groupName, new TabStopGroup());
 		}
-		
+
 		getTabStopGroup(groupName).addTabStop(start, end);
 	}
 
 	public HashMap<String, TabStopGroup> getGroups() {
 		return groups;
 	}
-	
+
 	/**
 	 * Returns total amount of tabstops in current structure
 	 * @return
@@ -78,26 +78,26 @@ public class TabStopStructure {
 		for (TabStopGroup item : groups.values()) {
 			result += item.getLength();
 		}
-		
+
 		return result;
 	}
-	
+
 	public String[] getSortedGroupKeys() {
 		Set<String> keySet = groups.keySet();
 		String[] keys = keySet.toArray(new String[keySet.size()]);
 		Arrays.sort(keys);
 		return keys;
 	}
-	
+
 	public TabStop getFirstTabStop() {
 		String[] names = getSortedGroupKeys();
 		return (names.length > 0) ? getTabStop(names[0], 0) : null;
 	}
-	
+
 	public TabStopGroup getTabStopGroup(String groupName) {
 		return (TabStopGroup) groups.get(groupName);
 	}
-	
+
 	public TabStop getTabStop(String groupName, int index) {
 		ArrayList<TabStop> tabStops = getTabStopGroup(groupName).getTabStopList();
 		return (index < tabStops.size()) ? tabStops.get(index) : null;
