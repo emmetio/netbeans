@@ -336,8 +336,13 @@ public class EmmetEditor implements IEmmetEditor {
 	public String getIndentation() {
 		String ws = "";
 		String line = this.getLine();
+		if (line.length() == 0) {
+			return ws;
+		}
 		int i = 0;
-		while (Character.isWhitespace(line.charAt(i))) ws += line.charAt(i++);
+		while (Character.isWhitespace(line.charAt(i))) {
+			ws += line.charAt(i++);
+		}
 		return ws;
 	}
 
