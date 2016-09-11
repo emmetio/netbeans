@@ -19,7 +19,7 @@ function runEmmetAction(editor, actionName){
 	for (var i = 2, il = arguments.length; i < il; i++) {
 		args.push(arguments[i]);
 	}
-	
+
 	return require('actions').run(actionName, args);
 }
 
@@ -29,11 +29,11 @@ function tryBoolean(val) {
 		return true;
 	if (strVal == 'false')
 		return false;
-		
+
 	var intVal = parseInt(strVal, 10);
 	if (!isNaN(intVal))
 		return intVal;
-	
+
 	return strVal;
 }
 
@@ -41,15 +41,15 @@ function previewWrapWithAbbreviation(editor, abbr) {
 	abbr = String(abbr);
 	if (!abbr)
 		return null;
-	
+
 	var editorUtils = require('editorUtils');
 	var utils = require('utils');
 	var info = editorUtils.outputInfo(editor);
-	
+
 	var range = editor.getSelectionRange(),
 		startOffset = range.start,
 		endOffset = range.end;
-		
+
 	if (startOffset == endOffset) {
 		// no selection, find tag pair
 		var match = require('htmlMatcher').find(info.content, startOffset);
@@ -57,15 +57,15 @@ function previewWrapWithAbbreviation(editor, abbr) {
 			// nothing to wrap
 			return null;
 		}
-		
+
 		var narrowedSel = utils.narrowToNonSpace(info.content, match.range);
 		startOffset = narrowedSel.start;
 		endOffset = narrowedSel.end;
 	}
-	
+
 	var newContent = utils.escapeText(info.content.substring(startOffset, endOffset));
 	var ctx = require('actionUtils').captureContext(editor);
-	return require('wrapWithAbbreviation').wrap(abbr, editorUtils.unindent(editor, newContent), info.syntax, info.profile, ctx) 
+	return require('wrapWithAbbreviation').wrap(abbr, editorUtils.unindent(editor, newContent), info.syntax, info.profile, ctx)
 		|| null;
 }
 
@@ -116,7 +116,7 @@ function javaLoadUserData(payload) {
 	// prepare snippets
 	var snippets = {};
 	var addSnippets = function(data, type) {
-		if (!data) 
+		if (!data)
 			return;
 
 		_.each(data, function(item) {
