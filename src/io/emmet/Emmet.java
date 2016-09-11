@@ -24,6 +24,9 @@ public class Emmet {
 	};
 
 	private Emmet() {
+	}
+
+	private void initialize(){
 		cx = Context.enter();
 		scope = cx.initStandardObjects();
 		try {
@@ -49,6 +52,7 @@ public class Emmet {
 			synchronized (Emmet.class) {
 				if (singleton == null) {
 					singleton = new Emmet();
+					singleton.initialize();
 				}
 			}
 		}
