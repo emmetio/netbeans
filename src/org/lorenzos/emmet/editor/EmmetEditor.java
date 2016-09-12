@@ -132,22 +132,24 @@ public class EmmetEditor implements IEmmetEditor {
 
 	@Override
 	public void replaceContent(String value, final int start, final int end, boolean no_indent) {
-			// Indent string
-			if (!no_indent) {
-				value = EditorUtilities.stringIndent(value, this.getIndentation()).trim();
-			}
+		// Indent string
+		if (!no_indent) {
+			value = EditorUtilities.stringIndent(value, this.getIndentation()).trim();
+		}
 
-			// Expand TAB to SPACES if required
-			if (IndentUtils.isExpandTabs(this.doc)) {
-				String indent = "";
-				for (int i = 0; i < IndentUtils.indentLevelSize(this.doc); i++) indent += " ";
-				value = value.replaceAll("\\t", indent);
+		// Expand TAB to SPACES if required
+		if (IndentUtils.isExpandTabs(this.doc)) {
+			String indent = "";
+			for (int i = 0; i < IndentUtils.indentLevelSize(this.doc); i++) {
+				indent += " ";
 			}
+			value = value.replaceAll("\\t", indent);
+		}
 
-			// Manage placeholder
-			Emmet emmet = Emmet.getSingleton();
-			value = Context.toString(emmet.execJSFunction("nbTransformTabstops", value));
-			CodeTemplate ct = CodeTemplateManager.get(this.doc).createTemporary(value);
+		// Manage placeholder
+		Emmet emmet = Emmet.getSingleton();
+		value = Context.toString(emmet.execJSFunction("nbTransformTabstops", value));
+		CodeTemplate ct = CodeTemplateManager.get(this.doc).createTemporary(value);
 
 		// see #3
 		StyledDocument styledDocument = (StyledDocument) this.doc;
@@ -334,8 +336,13 @@ public class EmmetEditor implements IEmmetEditor {
 	public String getIndentation() {
 		String ws = "";
 		String line = this.getLine();
+		if (line.length() == 0) {
+			return ws;
+		}
 		int i = 0;
-		while (Character.isWhitespace(line.charAt(i))) ws += line.charAt(i++);
+		while (Character.isWhitespace(line.charAt(i))) {
+			ws += line.charAt(i++);
+		}
 		return ws;
 	}
 
