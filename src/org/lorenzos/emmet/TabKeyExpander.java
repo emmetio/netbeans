@@ -19,33 +19,33 @@ import org.netbeans.modules.csl.spi.GsfUtilities;
  *
  * @author junichi11
  */
-public final class TabKeyExpansion implements KeyListener {
+public final class TabKeyExpander implements KeyListener {
 
 	private final JTextComponent component;
 	private static final KeyStroke DEFAULT_EXPANSION_KEY = KeyStroke.getKeyStroke(KeyEvent.VK_TAB, 0); // 0 : no modifiers
 	private static final KeyStroke ALT_TAB_KEY = KeyStroke.getKeyStroke(KeyEvent.VK_TAB, KeyEvent.SHIFT_DOWN_MASK);
-	private static final Logger LOGGER = Logger.getLogger(TabKeyExpansion.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(TabKeyExpander.class.getName());
 
-	public static TabKeyExpansion get(JTextComponent component) {
+	public static TabKeyExpander get(JTextComponent component) {
 		assert component != null;
-		TabKeyExpansion expansion = (TabKeyExpansion) component.getClientProperty(TabKeyExpansion.class);
-		if (expansion == null) {
-			expansion = new TabKeyExpansion(component);
-			component.putClientProperty(TabKeyExpansion.class, expansion);
+		TabKeyExpander expander = (TabKeyExpander) component.getClientProperty(TabKeyExpander.class);
+		if (expander == null) {
+			expander = new TabKeyExpander(component);
+			component.putClientProperty(TabKeyExpander.class, expander);
 		}
-		return expansion;
+		return expander;
 	}
 
 	public static synchronized void remove(JTextComponent component) {
-		TabKeyExpansion expansion = (TabKeyExpansion) component.getClientProperty(TabKeyExpansion.class);
-		if (expansion != null) {
-			assert expansion.component == component : "Wrong component: TabKeyExpansion.component=" + expansion.component + ", component=" + component;
-			expansion.uninstall();
-			component.putClientProperty(TabKeyExpansion.class, null);
+		TabKeyExpander expander = (TabKeyExpander) component.getClientProperty(TabKeyExpander.class);
+		if (expander != null) {
+			assert expander.component == component : "Wrong component: TabKeyExpansion.component=" + expander.component + ", component=" + component;
+			expander.uninstall();
+			component.putClientProperty(TabKeyExpander.class, null);
 		}
 	}
 
-	private TabKeyExpansion(JTextComponent component) {
+	private TabKeyExpander(JTextComponent component) {
 		this.component = component;
 		install();
 	}

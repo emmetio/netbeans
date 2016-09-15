@@ -17,7 +17,7 @@ public class EmmetModule extends ModuleInstall {
 		@Override
 		public void propertyChange(PropertyChangeEvent evt) {
 			if (evt.getPropertyName() == null || EditorRegistry.FOCUS_GAINED_PROPERTY.equals(evt.getPropertyName())) {
-				TabKeyExpansion.get((JTextComponent) evt.getNewValue());
+				TabKeyExpander.get((JTextComponent) evt.getNewValue());
 			}
 		}
 	};
@@ -59,7 +59,7 @@ public class EmmetModule extends ModuleInstall {
 
 		EditorRegistry.removePropertyChangeListener(editorsTracker);
 		for (JTextComponent jtc : EditorRegistry.componentList()) {
-			TabKeyExpansion.remove(jtc);
+			TabKeyExpander.remove(jtc);
 		}
 	}
 
