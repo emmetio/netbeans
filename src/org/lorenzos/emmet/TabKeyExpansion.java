@@ -73,6 +73,11 @@ public final class TabKeyExpansion implements KeyListener {
 	}
 
 	private void expand(KeyEvent keyEvent) {
+		EmmetOptions options = EmmetOptions.getInstance();
+		if (!options.expandWithTab()) {
+			return;
+		}
+
 		if (GsfUtilities.isCodeTemplateEditing(component.getDocument())) {
 			return;
 		}

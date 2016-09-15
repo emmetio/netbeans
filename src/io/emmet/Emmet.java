@@ -3,22 +3,23 @@ package io.emmet;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import javax.swing.SwingUtilities;
 
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Scriptable;
 import org.mozilla.javascript.ScriptableObject;
 
 public class Emmet {
+
 	private volatile static Emmet singleton;
 	private static Context cx;
 	private static Scriptable scope;
 	private static String snippetsJSON = "snippets.json";
 	private static IUserData userDataDelegate = null;
 
-
 	private static String[] coreFiles = {
 		"emmet-app.js",
-//		"json2.js",
+		//		"json2.js",
 		"file-interface.js",
 		"java-wrapper.js"
 	};
@@ -26,7 +27,7 @@ public class Emmet {
 	private Emmet() {
 	}
 
-	private void initialize(){
+	private void initialize() {
 		cx = Context.enter();
 		scope = cx.initStandardObjects();
 		try {
@@ -64,8 +65,24 @@ public class Emmet {
 	}
 
 	public static void reset() {
-		if (singleton == null)
+		if (SwingUtilities.isEventDispatchThread()) {
+			resetContext();
+			getSingleton();
+		} else {
+			SwingUtilities.invokeLater(new Runnable() {
+				@Override
+				public void run() {
+					resetContext();
+					getSingleton();
+				}
+			});
+		}
+	}
+
+	private static void resetContext() {
+		if (singleton == null) {
 			return;
+		}
 
 		Context.exit();
 		cx = null;
@@ -83,17 +100,18 @@ public class Emmet {
 		// http://stackoverflow.com/a/5445161/1312205
 		InputStream is = this.getClass().getResourceAsStream(fileName);
 		try {
-	        return new java.util.Scanner(is).useDelimiter("\\A").next();
-	    } catch (java.util.NoSuchElementException e) {
-	        return "";
-	    }
+			return new java.util.Scanner(is).useDelimiter("\\A").next();
+		} catch (java.util.NoSuchElementException e) {
+			return "";
+		}
 	}
 
 	/**
 	 * Executes arbitrary JS function with passed arguments. Each argument is
 	 * automatically converted to JS type
-	 * @param name JS function name. May have namespaces
-	 * (e.g. <code>emmet.require('actions').get</code>)
+	 *
+	 * @param name JS function name. May have namespaces (e.g.
+	 * <code>emmet.require('actions').get</code>)
 	 * @param vargs
 	 * @return
 	 */
@@ -123,6 +141,7 @@ public class Emmet {
 
 	/**
 	 * Runs Emmet script on passed editor object (should be the first argument)
+	 *
 	 * @return 'True' if action was successfully executed
 	 */
 	public boolean runAction(Object... args) {
