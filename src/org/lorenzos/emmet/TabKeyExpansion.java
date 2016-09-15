@@ -6,8 +6,12 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Action;
 import javax.swing.KeyStroke;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
 import javax.swing.text.JTextComponent;
+import javax.swing.text.Keymap;
 import org.lorenzos.emmet.editor.EmmetEditor;
 import org.netbeans.modules.csl.spi.GsfUtilities;
 
@@ -17,8 +21,9 @@ import org.netbeans.modules.csl.spi.GsfUtilities;
  */
 public final class TabKeyExpansion implements KeyListener {
 
-	private static final KeyStroke DEFAULT_EXPANSION_KEY = KeyStroke.getKeyStroke(KeyEvent.VK_TAB, 0); // 0 : no modifiers
 	private final JTextComponent component;
+	private static final KeyStroke DEFAULT_EXPANSION_KEY = KeyStroke.getKeyStroke(KeyEvent.VK_TAB, 0); // 0 : no modifiers
+	private static final KeyStroke ALT_TAB_KEY = KeyStroke.getKeyStroke(KeyEvent.VK_TAB, KeyEvent.SHIFT_DOWN_MASK);
 	private static final Logger LOGGER = Logger.getLogger(TabKeyExpansion.class.getName());
 
 	public static TabKeyExpansion get(JTextComponent component) {
@@ -78,11 +83,39 @@ public final class TabKeyExpansion implements KeyListener {
 			return;
 		}
 
-		if (GsfUtilities.isCodeTemplateEditing(component.getDocument())) {
+		Document document = component.getDocument();
+		if (GsfUtilities.isCodeTemplateEditing(document)) {
+			return;
+		}
+
+		String selectedText = component.getSelectedText();
+		if (selectedText != null && !selectedText.isEmpty()) {
 			return;
 		}
 
 		KeyStroke keyStroke = KeyStroke.getKeyStrokeForEvent(keyEvent);
+
+		// check whether there is whitespace before the caret position
+		try {
+			int caretPosition = component.getCaretPosition();
+			int previousCaretPosition = caretPosition - 1;
+			if (previousCaretPosition >= 0) {
+				String text = document.getText(previousCaretPosition, 1);
+				if (!Character.isWhitespace(text.charAt(0))) {
+					if (ALT_TAB_KEY.equals(keyStroke)) {
+						Keymap keymap = component.getKeymap();
+						Action action = keymap.getAction(DEFAULT_EXPANSION_KEY);
+						if (action != null) {
+							action.actionPerformed(null);
+							keyEvent.consume();
+						}
+					}
+				}
+			}
+		} catch (BadLocationException ex) {
+			LOGGER.log(Level.WARNING, null, ex);
+		}
+
 		if (DEFAULT_EXPANSION_KEY.equals(keyStroke)) {
 			if (expand()) {
 				keyEvent.consume();
