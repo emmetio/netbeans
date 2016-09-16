@@ -26,6 +26,12 @@ public final class TabKeyExpander implements KeyListener {
 	private static final KeyStroke ALT_TAB_KEY = KeyStroke.getKeyStroke(KeyEvent.VK_TAB, KeyEvent.SHIFT_DOWN_MASK);
 	private static final Logger LOGGER = Logger.getLogger(TabKeyExpander.class.getName());
 
+	/**
+	 * Get an instance for the editor.
+	 *
+	 * @param component the editor
+	 * @return the instance
+	 */
 	public static TabKeyExpander get(JTextComponent component) {
 		assert component != null;
 		TabKeyExpander expander = (TabKeyExpander) component.getClientProperty(TabKeyExpander.class);
@@ -36,6 +42,11 @@ public final class TabKeyExpander implements KeyListener {
 		return expander;
 	}
 
+	/**
+	 * Remove the instance from the editor.
+	 *
+	 * @param component the editor
+	 */
 	public static synchronized void remove(JTextComponent component) {
 		TabKeyExpander expander = (TabKeyExpander) component.getClientProperty(TabKeyExpander.class);
 		if (expander != null) {
@@ -50,12 +61,18 @@ public final class TabKeyExpander implements KeyListener {
 		install();
 	}
 
+	/**
+	 * Add a key listener.
+	 */
 	private void install() {
 		if (component != null) {
 			component.addKeyListener(this);
 		}
 	}
 
+	/**
+	 * Remove a key listener.
+	 */
 	private void uninstall() {
 		if (component != null) {
 			component.removeKeyListener(this);
@@ -77,7 +94,13 @@ public final class TabKeyExpander implements KeyListener {
 		expand(e);
 	}
 
-	private void expand(KeyEvent keyEvent) {
+	/**
+	 * Expand an abbreviation. Do nothing if a code template is being edited, or
+	 * text is selected, or the context is not in available syntaxes.
+	 *
+	 * @param keyEvent the key event
+	 */
+	void expand(KeyEvent keyEvent) {
 		EmmetOptions options = EmmetOptions.getInstance();
 		if (!options.expandWithTab()) {
 			return;
@@ -123,6 +146,10 @@ public final class TabKeyExpander implements KeyListener {
 		}
 	}
 
+	/**
+	 * Expand an abbreviation.
+	 *
+	 */
 	private boolean expand() {
 		assert EventQueue.isDispatchThread();
 		try {
