@@ -22,6 +22,7 @@ import io.emmet.SelectionData;
 import java.io.File;
 import org.netbeans.lib.editor.codetemplates.api.CodeTemplate;
 import org.mozilla.javascript.Context;
+import org.netbeans.api.annotations.common.CheckForNull;
 import org.netbeans.modules.editor.NbEditorUtilities;
 import org.openide.filesystems.FileUtil;
 import org.openide.text.NbDocument;
@@ -29,6 +30,7 @@ import org.openide.util.Exceptions;
 
 public class EmmetEditor implements IEmmetEditor {
 
+	private static final String MIME_HTML = "text/html";
 	private static final String MIME_XCSS = "text/x-css";
 	private static final String MIME_CSS = "text/css";
 	private static final String MIME_LESS = "text/less";
@@ -180,20 +182,29 @@ public class EmmetEditor implements IEmmetEditor {
 
 	private boolean matchesSyntax(Object... vargs) {
 		String ct = this.getContentType();
-		for (int i = 0; i < vargs.length; i++) {
-			if (ct.equals(vargs[i])) {
-				return true;
+		if (ct != null) {
+			for (Object varg : vargs) {
+				if (ct.equals(varg)) {
+					return true;
+				}
 			}
 		}
 
 		return false;
 	}
 
+	@CheckForNull
 	@Override
 	public String getSyntax() {
+		String ct = getContentType();
+		if (ct == null) {
+			return null;
+		}
 		// NetBeans returns content type as 'text/x-css' before version 7.3 beta and returns 'text/css' from 7.3 beta
-		String syntax = SYNTAX_HTML;
-		if (matchesSyntax(MIME_XCSS, MIME_CSS)) {
+		String syntax = null;
+		if (matchesSyntax(MIME_HTML)) {
+			syntax = SYNTAX_HTML;
+		} else if (matchesSyntax(MIME_XCSS, MIME_CSS)) {
 			syntax = SYNTAX_CSS;
 		} else if (matchesSyntax(MIME_XSCSS, MIME_SCSS)) {
 			syntax = SYNTAX_SCSS;
@@ -203,16 +214,16 @@ public class EmmetEditor implements IEmmetEditor {
 			syntax = SYNTAX_LESS;
 		} else {
 			String[] knownSyntaxes = {SYNTAX_HAML, SYNTAX_XSL, SYNTAX_STYL, SYNTAX_STYLUS};
-			String ct = getContentType();
-
 			for (String s : knownSyntaxes) {
-				if (ct.indexOf(s) != -1) {
+				if (ct.contains(s)) {
 					syntax = s;
 					break;
 				}
 			}
 		}
-
+		if (syntax == null) {
+			return null;
+		}
 		Emmet emmet = Emmet.getSingleton();
 		return Context.toString(emmet.execJSFunction("javaDetectSyntax", this, syntax));
 	}
@@ -263,6 +274,7 @@ public class EmmetEditor implements IEmmetEditor {
 			AbstractDocument abstractDoc = (AbstractDocument) doc;
 			abstractDoc.readLock();
 			try{
+				// contentType is not set if ts is null
 				TokenSequence tokenSequence = TokenHierarchy.get(this.doc).tokenSequence();
 				while (tokenSequence != null) {
 					tokenSequence.move(this.caretPosition - 1);
@@ -350,6 +362,7 @@ public class EmmetEditor implements IEmmetEditor {
 		textComp.scrollRectToVisible(initialScrollingPosition);
 	}
 
+	@CheckForNull
 	public String getContentType() {
 		return contentType;
 	}
