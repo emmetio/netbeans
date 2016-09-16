@@ -6,7 +6,6 @@ package org.lorenzos.emmet;
 
 import java.io.File;
 import javax.swing.JFileChooser;
-import org.openide.util.NbPreferences;
 
 final class EmmetPanel extends javax.swing.JPanel {
 
@@ -30,6 +29,7 @@ final class EmmetPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         extPath = new javax.swing.JTextField();
         browseBtn = new javax.swing.JButton();
+        expandWithTabCheckBox = new javax.swing.JCheckBox();
 
         fileChooser.setDialogTitle(org.openide.util.NbBundle.getMessage(EmmetPanel.class, "EmmetPanel.fileChooser.dialogTitle")); // NOI18N
         fileChooser.setFileSelectionMode(javax.swing.JFileChooser.DIRECTORIES_ONLY);
@@ -45,17 +45,24 @@ final class EmmetPanel extends javax.swing.JPanel {
             }
         });
 
+        org.openide.awt.Mnemonics.setLocalizedText(expandWithTabCheckBox, org.openide.util.NbBundle.getMessage(EmmetPanel.class, "EmmetPanel.expandWithTabCheckBox.text")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(extPath, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(browseBtn))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(extPath, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(browseBtn))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(expandWithTabCheckBox)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -65,12 +72,14 @@ final class EmmetPanel extends javax.swing.JPanel {
                     .addComponent(jLabel1)
                     .addComponent(extPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(browseBtn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(expandWithTabCheckBox)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void browseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseBtnActionPerformed
-        int returnVal = fileChooser.showOpenDialog(this);
+		int returnVal = fileChooser.showOpenDialog(this);
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
 			File file = fileChooser.getSelectedFile();
 			if (file != null && file.exists()) {
@@ -84,11 +93,15 @@ final class EmmetPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_browseBtnActionPerformed
 
 	void load() {
-		extPath.setText(NbPreferences.forModule(EmmetPanel.class).get("extPath", ""));
+		EmmetOptions options = EmmetOptions.getInstance();
+		extPath.setText(options.getExtPath());
+		expandWithTabCheckBox.setSelected(options.expandWithTab());
 	}
 
 	void store() {
-		NbPreferences.forModule(EmmetPanel.class).put("extPath", extPath.getText());
+		EmmetOptions options = EmmetOptions.getInstance();
+		options.setExtPath(extPath.getText());
+		options.setExpandWithTab(expandWithTabCheckBox.isSelected());
 	}
 
 	boolean valid() {
@@ -97,6 +110,7 @@ final class EmmetPanel extends javax.swing.JPanel {
 	}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton browseBtn;
+    private javax.swing.JCheckBox expandWithTabCheckBox;
     private javax.swing.JTextField extPath;
     private javax.swing.JFileChooser fileChooser;
     private javax.swing.JLabel jLabel1;

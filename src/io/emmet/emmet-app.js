@@ -10497,8 +10497,11 @@ emmet.define('cssResolver', function(require, _) {
 			if (content) {
 				var replaceFrom = caretPos - abbr.length;
 				var replaceTo = caretPos;
-				if (editor.getContent().charAt(caretPos) == ';' && content.charAt(content.length - 1) == ';') {
-					replaceTo++;
+				var editorContent = editor.getContent();
+				if (editorContent.length() !== caretPos) {
+					if (editorContent.charAt(caretPos) == ';' && content.charAt(content.length - 1) == ';') {
+						replaceTo++;
+					}
 				}
 
 				editor.replaceContent(content, replaceFrom, replaceTo);
