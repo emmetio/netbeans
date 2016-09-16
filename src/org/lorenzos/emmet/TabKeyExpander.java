@@ -129,6 +129,10 @@ public final class TabKeyExpander implements KeyListener {
 			long start = System.currentTimeMillis();
 			final Emmet emmet = Emmet.getSingleton();
 			final EmmetEditor editor = EmmetEditor.create(component);
+			// no available syntax, don't expand
+			if (editor.getSyntax() == null) {
+				return false;
+			}
 
 			boolean result = emmet.runAction(editor, "expand_abbreviation"); // NOI18N
 
