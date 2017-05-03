@@ -18,6 +18,10 @@ By default, plugin has almost no shortcuts. To bind keyboard shortcuts to Emmet 
 
 This plugin supports [Emmet extensions](http://docs.emmet.io/customization/). Go to `Tools > Options > Miscellaneous > Emmet` tab and pick folder with your extensions.
 
+## TAB key support
+
+Expand abbreviations with the TAB key. Go to `Tools > Options > Miscellaneous > Emmet` tab. Then check it.
+
 ## Credits
 
 * [Original plugin](https://github.com/lorenzos/ZenCodingNetBeansPlugin) implementation by [Lorenzo Stanco](http://www.lorenzostanco.com)
