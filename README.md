@@ -6,6 +6,13 @@ Emmet is a web-developer’s toolkit that can greatly improve your HTML & CSS wo
 
 ## Installation
 
+### Recent Netbeans versions
+
+For recent NetBeans versions please download the *Emmet* plugin from our [releases here on github](https://github.com/emmetio/netbeans/releases). 
+To install, open `Tools > Plugins > Downloaded > Add Plugins...` and choose the file just downloaded and allow installation.
+
+### Older Netbeans versions (<=7.4)
+
 You can install this plugin directly from [NetBeans Plugin Portal](http://plugins.netbeans.org/plugin/48315/): in NetBeans, open `Tools > Plugins > Available plugins` and find and install *Emmet* plugin.
 
 When installed, check out `Edit > Emmet` menu item for available actions.
